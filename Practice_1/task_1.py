@@ -1,5 +1,5 @@
 """ 
-Тут условие задачи
+Тут условие задачи test some git magic
 """
 
 first_number = int(input())
