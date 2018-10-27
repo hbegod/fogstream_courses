@@ -8,6 +8,6 @@
 
 speed = int(input())
 time = int(input())
-print(0 + (speed * time%109))
+print(0 + (speed * time % 109))
 
 

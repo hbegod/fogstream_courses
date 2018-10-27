@@ -6,6 +6,6 @@
 
 
 number = int(input())
-print(number%1440//60)
-print(number%60)
+print(number % 1440 // 60)
+print(number % 60)
 
