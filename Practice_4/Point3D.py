@@ -10,5 +10,10 @@ class Point3D:
 
     def distance(self, other):
         if not isinstance(other, Point3D):
-            raise ValueError('В метод передан параметр неверного типа. Тип должен быть Point3D')
-        return math.sqrt(math.pow(other.x - self.x, 2) + math.pow(other.y - self.y, 2) + math.pow(other.z - self.z, 2))
+            raise ValueError('В метод передан параметр неверного типа. '
+                             'Тип должен быть Point3D'
+                             )
+        return math.sqrt(math.pow(other.x - self.x, 2) +
+                         math.pow(other.y - self.y, 2) +
+                         math.pow(other.z - self.z, 2)
+                         )

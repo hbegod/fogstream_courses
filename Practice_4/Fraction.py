@@ -45,8 +45,6 @@ class Fraction:
         print('mul')
         return Fraction(new_numerator, new_denominator).__reduce_fraction()
 
-    def __floordiv__
-
     def __lt__(self, other):
         if self.a / self.b < other.a / other.b:
             return True

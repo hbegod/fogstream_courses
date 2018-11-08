@@ -11,16 +11,22 @@ class Complex:
         return Complex(self.real + other.real, self.imag + other.imag)
 
     def __mul__(self, other):
-        return Complex(self.real * other.real - self.imag * other.imag, self.imag * other.real + self.real * other.imag)
+        return Complex(self.real * other.real - self.imag * other.imag,
+                       self.imag * other.real + self.real * other.imag
+                       )
 
     def __sub__(self, other):
         return Complex(self.real - other.real, self.imag - other.imag)
 
     def __truediv__(self, other):
-        real_part = ((self.real * other.real + self.imag * other.imag) / (
-                    math.pow(other.real, 2) + math.pow(other.imag, 2)))
-        imag_part = ((self.imag * other.real - self.real * other.imag) / (
-                    math.pow(other.real, 2) + math.pow(other.imag, 2)))
+        real_part = (
+                        (self.real * other.real + self.imag * other.imag) /
+                        (math.pow(other.real, 2) + math.pow(other.imag, 2))
+                    )
+        imag_part = (
+                        (self.imag * other.real - self.real * other.imag) /
+                        (math.pow(other.real, 2) + math.pow(other.imag, 2))
+                    )
         return Complex(real_part, imag_part)
 
     def __str__(self):
