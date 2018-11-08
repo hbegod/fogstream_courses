@@ -2,7 +2,7 @@ import math
 
 
 class Fraction:
-    """Класс Дробь"""
+    'Класс Дробь'
 
     def __init__(self, numerator, denominator):
         k = math.gcd(numerator,denominator)
@@ -44,6 +44,8 @@ class Fraction:
         new_denominator = self.b * other.b
         print('mul')
         return Fraction(new_numerator, new_denominator).__reduce_fraction()
+
+    def __floordiv__
 
     def __lt__(self, other):
         if self.a / self.b < other.a / other.b:
