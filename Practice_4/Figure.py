@@ -47,7 +47,8 @@ class Triangle(Figure):
         return math.sqrt(self.half_perimeter() *
                          (self.half_perimeter() - self.__first_line) *
                          (self.half_perimeter() - self.__second_line) *
-                         (self.half_perimeter() - self.__third_line))
+                         (self.half_perimeter() - self.__third_line)
+                         )
 
     def perimeter(self):
         return self.__first_line + self.__second_line + self.__third_line

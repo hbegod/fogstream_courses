@@ -1,7 +1,7 @@
 # напишите реализацию класса Polynome
 class Polynome:
-    def __init__(self, list):
-        self.list = list
+    def __init__(self, polynom_list):
+        self.polynom_list = polynom_list
 
     def __add__(self, other):
         pass

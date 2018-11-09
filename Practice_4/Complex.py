@@ -30,9 +30,4 @@ class Complex:
         return Complex(real_part, imag_part)
 
     def __str__(self):
-        str_real = str(round(self.real, 2))
-        if self.imag > 0:
-            str_imag = '+' + str(round(self.imag, 2)) + 'j'
-        else:
-            str_imag = str(round(self.imag, 2)) + 'j'
-        return '(' + str_real + str_imag + ')'
+        return '({:.2f}{:+.2f}j)'.format(self.real,self.imag)
