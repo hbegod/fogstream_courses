@@ -3,6 +3,9 @@ import math
 
 
 class Figure:
+    """
+    Abstract class Figure only for declare methods
+    """
     def __init__(self):
         pass
 
@@ -14,6 +17,15 @@ class Figure:
 
 
 class Rectangle(Figure):
+    """
+    Rectangle class
+    input:
+    length
+    width
+    methods:
+    area - return area of rectangle
+    perimeter - return perimeter of rectangle
+    """
     def __init__(self, length, width):
         self.__width = width
         self.__length = length
@@ -26,6 +38,14 @@ class Rectangle(Figure):
 
 
 class Circle(Figure):
+    """
+    Circle class
+    input:
+    radius
+    methods:
+    area - return area of circle
+    perimeter - return perimeter of circle
+    """
     def __init__(self, radius):
         self.__radius = radius
         self.pi = 3.14159265359
@@ -38,6 +58,16 @@ class Circle(Figure):
 
 
 class Triangle(Figure):
+    """
+    Triangle class
+    input:
+    first_line
+    second_line
+    third_line
+    methods:
+    area - return area of triangle
+    perimeter - return perimeter of triangle
+    """
     def __init__(self, first_line, second_line, third_line):
         self.__first_line = first_line
         self.__second_line = second_line

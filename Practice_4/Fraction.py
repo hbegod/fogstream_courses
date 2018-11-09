@@ -2,7 +2,7 @@ import math
 
 
 class Fraction:
-    'Класс Дробь'
+    """Класс Дробь"""
 
     def __init__(self, numerator, denominator):
         k = math.gcd(numerator,denominator)
@@ -22,27 +22,22 @@ class Fraction:
     def __find_lcm(self, other):
         return self.b * other.b // math.gcd(self.b, other.b)
 
-
     def __add__(self, other):
-        new_numerator = self.a * (self.__find_lcm(other) // self.b) + other.a * (
-                self.__find_lcm(other) // other.b)
+        new_numerator = self.a * \
+                        (self.__find_lcm(other) // self.b) + \
+                        other.a * (self.__find_lcm(other) // other.b)
         new_denominator = self.__find_lcm(other)
-        print('add')
-
         return Fraction(new_numerator, new_denominator).__reduce_fraction()
 
     def __sub__(self, other):
         new_numerator = self.a * (self.__find_lcm(other) // self.b) - other.a * (
                 self.__find_lcm(other) // other.b)
         new_denominator = self.__find_lcm(other)
-        print('sub')
-
         return Fraction(new_numerator, new_denominator).__reduce_fraction()
 
     def __mul__(self, other):
         new_numerator = self.a * other.a
         new_denominator = self.b * other.b
-        print('mul')
         return Fraction(new_numerator, new_denominator).__reduce_fraction()
 
     def __lt__(self, other):

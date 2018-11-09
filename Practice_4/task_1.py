@@ -1,11 +1,10 @@
-from OOP.Fraction import Fraction
-from OOP.Figure import Figure
-from OOP.Figure import Circle
-from OOP.Figure import Rectangle
-from OOP.Figure import Triangle
+from Practice_4.Polynome import Polynome
 import math
 
-triangle = Triangle(1)
+p = Polynome([1,2,3])
+print(p)
+print(p.calc(2))
+
 
 # fraction1 = Fraction(0, 7)
 # fraction2 = Fraction(0, 1)
