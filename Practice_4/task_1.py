@@ -1,82 +1,27 @@
+from Practice_4.Polynome import Polynome
 import math
 
-
-class Fraction:
-    'Класс Дробь'
-
-    def __init__(self, numerator, denominator):
-        k = math.gcd(numerator,denominator)
-        if isinstance(numerator, int):
-            self.a = numerator // k
-        else:
-            raise ValueError('Type of numerator mast be int')
-        if isinstance(denominator, int):
-            self.b = denominator // k
-        else:
-            raise ValueError('Type of denominator mast be int')
-
-    def __reduce_fraction(self):
-        k = math.gcd(self.a, self.b)
-        return Fraction(self.a // k, self.b // k)
-
-    def __find_lcm(self, other):
-        return self.b * other.b // math.gcd(self.b, other.b)
+p = Polynome([1,2,3])
+print(p)
+print(p.calc(2))
 
 
-    def __add__(self, other):
-        new_numerator = self.a * (self.__find_lcm(other) // self.b) + other.a * (
-                self.__find_lcm(other) // other.b)
-        new_denominator = self.__find_lcm(other)
+# fraction1 = Fraction(0, 7)
+# fraction2 = Fraction(0, 1)
+#
+# bool_fra = fraction1 == fraction2
+# print(bool_fra)
+
+# a = fraction1 + fraction2
+# b = fraction1 - fraction2
+# c = fraction1 * fraction2
+# print()
+# a.print_info()
+# print(b)
+# c.print_info()
 
 
-        return Fraction(new_numerator, new_denominator).__reduce_fraction()
-
-    def __sub__(self, other):
-        new_numerator = self.a * (self.__find_lcm(other) // self.b) - other.a * (
-                self.__find_lcm(other) // other.b)
-        new_denominator = self.__find_lcm(other)
 
 
-        return Fraction(new_numerator, new_denominator).__reduce_fraction()
 
-    def __mul__(self, other):
-        new_numerator = self.a * other.a
-        new_denominator = self.b * other.b
 
-        return Fraction(new_numerator, new_denominator).__reduce_fraction()
-
-    def __lt__(self, other):
-        if self.a / self.b < other.a / other.b:
-            return True
-        else:
-            return False
-
-    def __gt__(self, other):
-        if self.a / self.b > other.a / other.b:
-            return True
-        else:
-            return False
-
-    def __eq__(self, other):
-        new_numerator_self = self.a * (self.__find_lcm(other) // self.b)
-        new_numerator_other = other.a * (self.__find_lcm(other) // other.b)
-        if new_numerator_self == new_numerator_other:
-            return True
-        else:
-            return False
-
-    def __ne__(self, other):
-        c = not(self == other)
-        return c
-
-    def __le__(self, other):
-        if self == other or self < other:
-            return True
-        else:
-            return False
-
-    def __ge__(self, other):
-        if self == other or self > other:
-            return True
-        else:
-            return False
