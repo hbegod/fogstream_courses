@@ -1,13 +1,19 @@
-# local_datetime хранит объект datetime
 import pytz
 from datetime import datetime
 
+# local_datetime хранит объект datetime
+
 tz = pytz.timezone('Etc/GMT-11')
-tz_moscow = pytz.timezone('Europe/Moscow')
 dt = datetime(year=2018, month=11, day=23, hour=15, minute=14, second=42, microsecond=437)
 just_datetime = dt.astimezone(tz)
-result = just_datetime.astimezone(tz_moscow)
 
-print(just_datetime)
+
+def convert_datetime_to_moscow_tz(datetime_input):
+    tz_moscow = pytz.timezone('Europe/Moscow')
+    return datetime_input.astimezone(tz_moscow)
+
+
+result = convert_datetime_to_moscow_tz(just_datetime)
+
 print(result)
 
