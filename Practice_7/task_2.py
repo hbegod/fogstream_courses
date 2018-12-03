@@ -3,24 +3,26 @@ import collections
 
 
 
-message = 'BABA KLAVA'
-key = '12'
+message = b"\x02pW\x1bbs\x1e)'xdA1\x16\x15e;E\x01;f~-|\x04[y\x1a\x00&\\h\x10u|X\x0fxYlH\x12[?\x1av5\x1cVt\x19&{\x01L="
+key = b'y87sZRfU'
 
-data_list_iter = ('j', 's', 'f', 'y', 'd', 'q', 'o', 'k', 'f', 'i', 'f')  # `data_list_iter` содержит генератор
-
-result = dict(zip(itertools.count(start=0, step=2), data_list_iter))
-print(result, '\n')
-print(b'\xd0\x91\xd0\xb0\xd0\xb9\xd1\x82\xd1\x8b'.decode('utf-8'))
-print(b'r\x00\x00'.decode('utf-8'))
 
 def exec_decrypt(message_symbol, key_symbol):
-    return ord(message_symbol) + key_symbol
+    result = message_symbol + key_symbol
+    return result
 
 
-#def decrypt(message, key):
+def decrypt(message, key):
+    key_hash_iter = itertools.cycle(key)
+    list_new = list(zip(message, key_hash_iter))
+    result_list = list()
+    for element in list_new:
+        symbol, key_symbol = element[0], element[1]
+        symol_decr = exec_decrypt(symbol, key_symbol)
+        result_list.append(symol_decr)
+    return bytes(result_list)
 
 
-print(ord('f'))
-print(ord('r'))
-print(exec_decrypt('f', 12))
-print(exec_decrypt('f', 12).to_bytes(length=3, byteorder='little'))
+result = decrypt(message, key)
+
+print(result.decode(encoding='utf-8'))
