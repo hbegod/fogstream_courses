@@ -1,0 +1,37 @@
+import os.path
+
+files_list = ['dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0/dir2/dir1',
+              'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir2/dir1/dir0',
+              'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir1/dir0/dir2', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir1/dir2/dir0', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir0/dir2/dir1', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir0/dir1',
+              'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0/dir1/dir2', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0/dir1/dir2', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir1/dir0/dir2', 'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir1/dir0/dir2',
+              'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0/dir2/dir1', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir2/dir0/dir1', 'dir1/dir2/dir0/dir0/dir2/dir1',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir2/dir1/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir2/dir0/dir1', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0/dir2', 'dir1/dir2/dir0/dir0',
+              'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir0/dir1',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir2/dir0/dir1', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0/dir2/dir1',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir2/dir1/dir0',
+              'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir1/dir0/dir2', 'dir1/dir2/dir0/dir1/dir2/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir0/dir1',
+              'dir1/dir2/dir0/dir2/dir1/dir0', 'dir1/dir2/dir0/dir0/dir1', 'dir1/dir2/dir0/dir1/dir0/dir2',
+              'dir1/dir2/dir0/dir1/dir0/dir2', 'dir1/dir2/dir0/dir1/dir2/dir0', 'dir1/dir2/dir0/dir1/dir0/dir2',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0/dir2/dir1', 'dir1/dir2/dir0/dir0/dir1',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir1/dir0',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0/dir1',
+              'dir1/dir2/dir0/dir0', 'dir1/dir2/dir0/dir0'
+              ]
+
+print(os.path.commonpath(files_list))
